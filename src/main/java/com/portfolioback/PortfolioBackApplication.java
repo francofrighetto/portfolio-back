@@ -26,7 +26,7 @@ public class PortfolioBackApplication {
             return new WebMvcConfigurer(){
                 @Override
                 public void addCorsMappings(CorsRegistry registry){
-                    registry.addMapping("/**").allowedOrigins("https://angular-portfolio14.web.app/").allowedMethods("*");
+                    registry.addMapping("/**").allowedOrigins("https://angular-portfolio14.web.app").allowedMethods("*");
                     registry.addMapping("/**").allowedOrigins("https://localhost:4200").allowedMethods("*");
 
                 }
