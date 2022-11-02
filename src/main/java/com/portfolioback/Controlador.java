@@ -60,11 +60,11 @@ public class Controlador {
         return serviceProyecto.listar();
     }
     
-    /*
+    
     @GetMapping("/proyectos/titulos")
     public List<Proyecto> listarTitulosDistintosProyecto(){
         return serviceProyecto.listarTitulosProyectoDistintos();
     }
-    */
+    
     
 }

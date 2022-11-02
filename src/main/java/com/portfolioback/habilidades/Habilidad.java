@@ -18,7 +18,7 @@ public class Habilidad {
     @Id
     @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_habilidad;
+    private int id_habilidades;
     
     @Column
     private String nombre;
@@ -28,6 +28,9 @@ public class Habilidad {
     
     @Column
     private String imagen;
+    
+    @Column
+    private int persona;
 
     public int getId_habilidad() {
         return id_habilidad;
@@ -69,7 +72,6 @@ public class Habilidad {
         this.persona = persona;
     }
     
-    @Column
-    private int persona;
+    
 }
     
