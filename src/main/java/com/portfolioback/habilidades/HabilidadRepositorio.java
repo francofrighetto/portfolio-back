@@ -3,6 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
  */
 package com.portfolioback.habilidades;
+import com.portfolioback.habilidades.Habilidad;
+
 
 import java.util.List;
 import org.springframework.data.repository.Repository;

@@ -16,7 +16,7 @@ public class Proyecto {
     @Id
     @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_persona;
+    private int id_proyecto;
     
     @Column
     private String titulo;

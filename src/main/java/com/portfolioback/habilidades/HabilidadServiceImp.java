@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
  *
  * @author Franco
  */
+@Service
 public class HabilidadServiceImp implements HabilidadService {
 
     @Autowired
