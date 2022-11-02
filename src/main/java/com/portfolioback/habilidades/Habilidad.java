@@ -32,13 +32,15 @@ public class Habilidad {
     @Column
     private int persona;
 
-    public int getId_habilidad() {
-        return id_habilidad;
+    public int getId_habilidades() {
+        return id_habilidades;
     }
 
-    public void setId_habilidad(int id_habilidad) {
-        this.id_habilidad = id_habilidad;
+    public void setId_habilidades(int id_habilidades) {
+        this.id_habilidades = id_habilidades;
     }
+
+
 
     public String getNombre() {
         return nombre;
