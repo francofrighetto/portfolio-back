@@ -5,6 +5,8 @@
 package com.portfolioback;
 
 
+import com.portfolioback.habilidades.Habilidad;
+import com.portfolioback.habilidades.HabilidadService;
 import com.portfolioback.header.Header;
 import com.portfolioback.header.HeaderService;
 import com.portfolioback.persona.PersonaService;
@@ -38,6 +40,15 @@ public class Controlador {
     @RequestMapping("/personas")
     public List<Persona> listarPersonas(){
         return servicePersona.listar();
+    }
+    
+    @Autowired
+    HabilidadService serviceHabilidad;
+    
+    @CrossOrigin(origins = {"http://localhost:4200", "https://angular-portfolio14.web.app/"}, maxAge=3600)
+    @RequestMapping("/habilidades")
+    public List<Habilidad> listarHabilidades(){
+        return serviceHabilidad.listar();
     }
     
     @Autowired
