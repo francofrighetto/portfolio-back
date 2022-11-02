@@ -23,7 +23,7 @@ public interface ProyectoRepositorio extends Repository<Proyecto, Integer> {
     Proyecto findById(int id_persona);
     Proyecto save(Proyecto p);
     void delete(Proyecto p);
-    @Query(value = "SELECT distinct(categoria.nombre) FROM proyecto left join categoria on categoria.id_categoria=proyecto.categoria;", nativeQuery=true)
+    @Query(value = "SELECT distinct(categoria.nombre) FROM proyecto left join categoria on categoria.id_categoria=proyecto.categoria", nativeQuery=true)
     List<Proyecto> buscarTitulosProyectosDistintios();
 
 }
