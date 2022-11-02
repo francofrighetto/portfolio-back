@@ -9,6 +9,8 @@ import com.portfolioback.header.Header;
 import com.portfolioback.header.HeaderService;
 import com.portfolioback.persona.PersonaService;
 import com.portfolioback.persona.Persona;
+import com.portfolioback.proyecto.Proyecto;
+import com.portfolioback.proyecto.ProyectoService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -18,7 +20,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-//@RequestMapping({"/personas"})
 public class Controlador {
     
     @Autowired
@@ -37,6 +38,20 @@ public class Controlador {
     @RequestMapping("/personas")
     public List<Persona> listarPersonas(){
         return servicePersona.listar();
+    }
+    
+    @Autowired
+    ProyectoService serviceProyecto;
+    
+    @CrossOrigin(origins = {"http://localhost:4200", "https://angular-portfolio14.web.app/"}, maxAge=3600)
+    @RequestMapping("/proyectos")
+    public List<Proyecto> listarProyecto(){
+        return serviceProyecto.listar();
+    }
+    
+    @RequestMapping("/proyectos/titulos")
+    public List<Proyecto> listarTitulosDistintosProyecto(){
+        return serviceProyecto.listarTitulosProyectoDistintos();
     }
     
     
