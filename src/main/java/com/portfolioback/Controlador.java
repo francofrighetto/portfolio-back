@@ -61,7 +61,7 @@ public class Controlador {
     }
     
     
-    @GetMapping("/proyectos/titulos")
+    @GetMapping("/titulossrp")
     public List<Proyecto> listarTitulosProyectoDistintos(){
         return serviceProyecto.listarTitulosProyectoDistintos();
     }
