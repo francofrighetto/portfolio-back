@@ -28,7 +28,7 @@ public class Controlador {
     HeaderService serviceHeader;
     
     @CrossOrigin(origins = {"http://localhost:4200", "https://angular-portfolio14.web.app/"}, maxAge=3600)
-    @RequestMapping("/header")
+    @GetMapping("/header")
     public List<Header> listarHeader(){
         return serviceHeader.listar();
     }
@@ -37,7 +37,7 @@ public class Controlador {
     PersonaService servicePersona;
     
     @CrossOrigin(origins = {"http://localhost:4200", "https://angular-portfolio14.web.app/"}, maxAge=3600)
-    @RequestMapping("/personas")
+    @GetMapping("/personas")
     public List<Persona> listarPersonas(){
         return servicePersona.listar();
     }
@@ -46,7 +46,7 @@ public class Controlador {
     HabilidadService serviceHabilidad;
     
     @CrossOrigin(origins = {"http://localhost:4200", "https://angular-portfolio14.web.app/"}, maxAge=3600)
-    @RequestMapping("/habilidades")
+    @GetMapping("/habilidades")
     public List<Habilidad> listarHabilidades(){
         return serviceHabilidad.listar();
     }
@@ -55,15 +55,16 @@ public class Controlador {
     ProyectoService serviceProyecto;
     
     @CrossOrigin(origins = {"http://localhost:4200", "https://angular-portfolio14.web.app/"}, maxAge=3600)
-    @RequestMapping("/proyectos")
+    @GetMapping("/proyectos")
     public List<Proyecto> listarProyecto(){
         return serviceProyecto.listar();
     }
     
-    @RequestMapping("/proyectos/titulos")
+    /*
+    @GetMapping("/proyectos/titulos")
     public List<Proyecto> listarTitulosDistintosProyecto(){
         return serviceProyecto.listarTitulosProyectoDistintos();
     }
-    
+    */
     
 }
