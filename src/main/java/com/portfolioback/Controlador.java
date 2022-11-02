@@ -24,7 +24,7 @@ public class Controlador {
     @Autowired
     HeaderService serviceHeader;
     
-    @CrossOrigin(origins = "http://localhost:4200", maxAge=3600)
+    @CrossOrigin(origins = {"http://localhost:4200", "https://angular-portfolio14.web.app/"}, maxAge=3600)
     @RequestMapping("/header")
     public List<Header> listarHeader(){
         return serviceHeader.listar();
@@ -33,7 +33,7 @@ public class Controlador {
     @Autowired
     PersonaService servicePersona;
     
-    @CrossOrigin(origins = "http://localhost:4200", maxAge=3600)
+    @CrossOrigin(origins = {"http://localhost:4200", "https://angular-portfolio14.web.app/"}, maxAge=3600)
     @RequestMapping("/personas")
     public List<Persona> listarPersonas(){
         return servicePersona.listar();
