@@ -12,7 +12,7 @@ import javax.persistence.*;
  * @author Franco
  */
 @Entity
-@Table(name="habiliades")
+@Table(name="habilidades")
 public class Habilidad {
     
     @Id
