@@ -22,23 +22,17 @@ public class HabilidadServiceImp implements HabilidadService {
        }
 
     @Override
-    public Habilidad add(Habilidad p) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public void save(Habilidad h) {
+        repositorio.save(h);
     }
 
     @Override
     public Habilidad listarId(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return repositorio.findById(id);
     }
 
     @Override
-    public Habilidad delete(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public void deleteId(int id) {
+        repositorio.deleteById(id);
     }
-
-    @Override
-    public Habilidad edit(Habilidad p) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-    
 }

@@ -4,7 +4,8 @@
  */
 package com.portfolioback;
 
-
+import com.portfolioback.categoria.Categoria;
+import com.portfolioback.categoria.CategoriaService;
 import com.portfolioback.habilidades.Habilidad;
 import com.portfolioback.habilidades.HabilidadService;
 import com.portfolioback.header.Header;
@@ -17,6 +18,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -33,6 +36,12 @@ public class Controlador {
         return serviceHeader.listar();
     }
     
+    @CrossOrigin(origins = {"http://localhost:4200", "https://angular-portfolio14.web.app/"}, maxAge=3600)
+    @GetMapping("/header/titulo")
+    public List<Header> buscarTitulo(){
+        return serviceHeader.buscarTitulo("Contacto");
+    }
+    
     @Autowired
     PersonaService servicePersona;
     
@@ -43,12 +52,28 @@ public class Controlador {
     }
     
     @Autowired
+    CategoriaService serviceCategoria;
+    
+    @CrossOrigin(origins = {"http://localhost:4200", "https://angular-portfolio14.web.app/"}, maxAge=3600)
+    @GetMapping("/categoria")
+    public List<Categoria> listarCategorias(){
+        return serviceCategoria.listar();
+    }
+    
+    @Autowired
     HabilidadService serviceHabilidad;
     
     @CrossOrigin(origins = {"http://localhost:4200", "https://angular-portfolio14.web.app/"}, maxAge=3600)
     @GetMapping("/habilidades")
-    public List<Habilidad> listarHabilidades(){
+    public List<Habilidad> listar(){
         return serviceHabilidad.listar();
+    }
+
+    
+    @CrossOrigin(origins = {"http://localhost:4200", "https://angular-portfolio14.web.app/"}, maxAge=3600)
+    @PostMapping("/nueva/habilidad")
+    public void agregarHabilidad(@RequestBody Habilidad h){
+        serviceHabilidad.save(h);
     }
     
     @Autowired
@@ -65,6 +90,7 @@ public class Controlador {
     public List<Proyecto> listarTitulosProyectoDistintos(){
         return serviceProyecto.listarTitulosProyectoDistintos();
     }
+      
     
     
 }

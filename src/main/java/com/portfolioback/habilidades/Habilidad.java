@@ -4,6 +4,8 @@
  */
 package com.portfolioback.habilidades;
 
+import com.portfolioback.categoria.Categoria;
+import com.portfolioback.persona.Persona;
 import javax.persistence.*;
 
 
@@ -13,6 +15,7 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name="habilidades")
+
 public class Habilidad {
     
     @Id
@@ -22,16 +25,34 @@ public class Habilidad {
     
     @Column
     private String nombre;
-    
+   
+    /*
     @Column
     private int categoria;
+    */
     
     @Column
     private String imagen;
     
     @Column
-    private int persona;
+    private int habilitado;
+    
+    
+    @ManyToOne
+    @JoinColumn(name="categoria",referencedColumnName="id_categoria")
+    private Categoria categoria;
 
+    /*
+    public Habilidad(int id_habilidades, String nombre, String imagen, Categoria categoria) {
+        this.id_habilidades = id_habilidades;
+        this.nombre = nombre;
+        this.imagen = imagen;
+        this.categoria = categoria;
+    }
+    */
+
+    
+    
     public int getId_habilidades() {
         return id_habilidades;
     }
@@ -39,8 +60,6 @@ public class Habilidad {
     public void setId_habilidades(int id_habilidades) {
         this.id_habilidades = id_habilidades;
     }
-
-
 
     public String getNombre() {
         return nombre;
@@ -50,13 +69,6 @@ public class Habilidad {
         this.nombre = nombre;
     }
 
-    public int getCategoria() {
-        return categoria;
-    }
-
-    public void setCategoria(int categoria) {
-        this.categoria = categoria;
-    }
 
     public String getImagen() {
         return imagen;
@@ -66,13 +78,22 @@ public class Habilidad {
         this.imagen = imagen;
     }
 
-    public int getPersona() {
-        return persona;
+    public Categoria getCategoria() {
+        return categoria;
     }
 
-    public void setPersona(int persona) {
-        this.persona = persona;
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
     }
+
+    public int getHabilitado() {
+        return habilitado;
+    }
+
+    public void setHabilitado(int habilitado) {
+        this.habilitado = habilitado;
+    }
+  
     
     
 }

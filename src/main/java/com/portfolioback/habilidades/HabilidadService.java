@@ -12,8 +12,7 @@ import java.util.List;
  */
 public interface HabilidadService {
     List<Habilidad> listar();
-    Habilidad add(Habilidad p);
+    void save(Habilidad p);
     Habilidad listarId(int id);
-    Habilidad delete(int id);
-    Habilidad edit(Habilidad p);
+    void deleteId(int id);
 }

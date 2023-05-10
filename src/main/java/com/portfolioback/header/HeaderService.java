@@ -16,4 +16,6 @@ public interface HeaderService {
     Header listarId(int id);
     Header delete(int id);
     Header edit(Header p);
+    List<Header> buscarTitulo(String titulo);
+
 }

@@ -7,6 +7,7 @@ import com.portfolioback.habilidades.Habilidad;
 
 
 import java.util.List;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.Repository;
 
 /**
@@ -16,6 +17,12 @@ import org.springframework.data.repository.Repository;
 public interface HabilidadRepositorio extends Repository<Habilidad,Integer>{
     List<Habilidad>findAll();
     Habilidad findById(int id_header);
-    Habilidad save(Habilidad p);
-    void delete(Habilidad p);
+    void save(Habilidad h);
+    void deleteById(int h);
+    
+    /*
+    @Query(value="SELECT id_habilidades, habilidades.nombre as 'habilidad', imagen, categoria.nombre as 'categoriaNombre' FROM habilidades\n" +
+"inner join categoria on habilidades.categoria = categoria.id_categoria",nativeQuery=true)
+     List<Habilidad> getCompleto();
+*/
 }

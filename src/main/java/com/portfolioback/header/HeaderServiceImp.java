@@ -19,6 +19,10 @@ public class HeaderServiceImp implements HeaderService {
     public List<Header> listar() {
         return repositorio.findAll();
     }
+    
+    public List<Header> buscarTitulo(String titulo) {
+        return repositorio.buscarPorTitulo(titulo);
+    }
 
     @Override
     public Header add(Header p) {
